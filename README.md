@@ -1,2 +1,2 @@
-# brunode
-projeto para aprendizado de nodejs
+# Card Manager
+projeto para gerenciamento de cartas Magic
