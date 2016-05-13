@@ -1,0 +1,17 @@
+extends ./template/services.jade
+  
+block teste
+  p.white eh nozes
+  
+block container
+  div(ng-controller="brnCtrl")
+    input(ng-model="name")
+    p.white-color {{name}}
+  
+  
+block plugins
+  script(src="js/brnController.js")
+
+  
+
+  
