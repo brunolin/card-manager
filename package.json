@@ -9,7 +9,7 @@
   "author": "Bruno Wellython",
   "license": "MIT",
   "devDependencies": {
-    "fancybox": "^3.0.0",
+    "angular-ui-bootstrap": "^1.3.2",
     "grunt": "^1.0.1",
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-jade": "^1.0.0",
