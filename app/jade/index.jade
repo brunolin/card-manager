@@ -1,17 +1,17 @@
 extends ./template/services.jade
   
-block teste
-  p.white eh nozes
-  
 block container
-  div(ng-controller="brnCtrl")
-    input(ng-model="name")
-    p.white-color {{name}}
-  
-  
+  div.container(ng-controller="brnCtrl")
+    div.row
+      div.col-xs-12.h-100      
+        ul.nav.nav-tabs.nav-justified
+          li(role="presentation" ng-repeat="item in menu" ng-class="{ active : selected.menu == item.id }")
+            a(ng-value="{{item.id}}" ng-click="menuSelected(item)" href="#")
+                {{item.name}}
+    div.row
+      div.col-xs-12.h-100(ng-include src="selectedTemplate")
+
 block plugins
   script(src="js/controllers/brnController.js")
-
-  
-
-  
+  script(src="js/controllers/createController.js")
+  script(src="js/controllers/searchController.js")

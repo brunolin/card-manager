@@ -8,16 +8,27 @@
     <script src="js/angular/angular-route.min.js"></script>
     <script src="js/angular/angular-resource.min.js"></script>
     <script src="js/angular/ui-bootstrap.js"></script>
+    <script src="js/angular/ng-file-upload.js"></script>
     <script src="js/angular/ui-bootstrap-tpls.js"></script>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="js/angular/ui-bootstrap-csp.css">
   </head>
   <body>
-    <p class="white">eh nozes</p>
-    <div ng-controller="brnCtrl">
-      <input ng-model="name">
-      <p class="white-color">{{name}}</p>
+    <div ng-controller="brnCtrl" class="container">
+      <div class="row">
+        <div class="col-xs-12 h-100">     
+          <ul class="nav nav-tabs nav-justified">
+            <li role="presentation" ng-repeat="item in menu" ng-class="{ active : selected.menu == item.id }"><a ng-value="{{item.id}}" ng-click="menuSelected(item)" href="#">{{item.name}}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div ng-include src="selectedTemplate" class="col-xs-12 h-100"></div>
+      </div>
     </div>
     <script src="js/controllers/brnController.js"></script>
+    <script src="js/controllers/createController.js"></script>
+    <script src="js/controllers/searchController.js"></script>
   </body>
 </html>
