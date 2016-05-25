@@ -1,5 +1,7 @@
-div.row.container-900.bg-gray(ng-controller="createCtrl")
+div.row.bg-gray.h-600.no-margin.padding-20.box-color(ng-controller="createCtrl")
   div.col-xs-3
-    span Upload imagem
+    button(type="file" ngf-select="upload($file, $invalidFiles)" accept="image/*"
+     ng-model="picFile" ngf-max-height="1000" ngf-max-size="1MB" style="width: 30px; height: 30px;")
+    img(ng-if="picFile" ngf-src="picFile" class="thumb")
   div.col-xs-9
     span Dados imagem

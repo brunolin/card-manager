@@ -3,16 +3,16 @@ extends ./template/services.jade
 block container
   div.container.bg-gray.one-column.no-margin.no-padding(ng-controller="brnCtrl")
     div.row.no-margin
-      img.img-responsive(src="./img/header.png")
+      //img.img-responsive(src="./img/header.png")
     div.row.no-margin
-      div.col-xs-12.h-100.no-padding      
+      div.col-xs-12.no-padding.box-color      
         ul.nav.nav-tabs.nav-justified
           li(role="presentation" ng-repeat="item in menu" ng-class="{ active : selected.menu == item.id }")
             a(ng-value="{{item.id}}" ng-click="menuSelected(item)" href="#")
                 {{item.name}}
-    div.container.bg-white.one-column.no-margin.no-padding
-      div.row.container-800            
-        div.col-xs-12.h-100(ng-include src="selectedTemplate")
+    div.container.container-custom.bg-white.one-column.no-margin.no-padding
+      div.row       
+        div.container-900(ng-include src="selectedTemplate")
 
 block plugins
   script(src="js/controllers/brnController.js")

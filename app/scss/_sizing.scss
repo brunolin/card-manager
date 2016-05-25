@@ -1,19 +1,28 @@
-@for $i from 1 through 10 {
+@for $i from 1 through 12 {
   .w-#{$i*50} {
     width: 50px * $i
   }
 }
 
-@for $i from 1 through 10 {
+@for $i from 1 through 12 {
   .h-#{$i*50} {
     height: 50px * $i
   }
 }
 
-.container-800 {
-  max-width: 800px;
-  min-width: 800px;
-  margin-left: 10% !important;
+.thumb {
+    width: 150px;
+    height: 200px;
+}
+
+.container-custom {
+  min-height: calc(100% - 400px);
+}
+
+.container-900 {
+  width: 900px;
+  margin: 0 auto 50px;
+  box-sizing: border-box;
 }
 
 .one-column {

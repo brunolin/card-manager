@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ng-app="brnApp">
   <head>
-    <title>brunolin</title>
+    <title>untitled</title>
     <meta charser="utf-8">
     <script src="js/angular/angular.js"></script>
     <script src="js/angular/angular-animate.js"></script>
@@ -9,6 +9,7 @@
     <script src="js/angular/angular-resource.min.js"></script>
     <script src="js/angular/ui-bootstrap.js"></script>
     <script src="js/angular/ng-file-upload.js"></script>
+    <script src="js/angular/ng-file-upload-shim.js"></script>
     <script src="js/angular/ui-bootstrap-tpls.js"></script>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bootstrap.css">
@@ -16,17 +17,19 @@
   </head>
   <body>
     <div ng-controller="brnCtrl" class="container bg-gray one-column no-margin no-padding">
-      <div class="row no-margin"><img src="./img/header.png" class="img-responsive"></div>
       <div class="row no-margin">
-        <div class="col-xs-12 h-100 no-padding">     
+        <!--img.img-responsive(src="./img/header.png")-->
+      </div>
+      <div class="row no-margin">
+        <div class="col-xs-12 no-padding box-color">     
           <ul class="nav nav-tabs nav-justified">
             <li role="presentation" ng-repeat="item in menu" ng-class="{ active : selected.menu == item.id }"><a ng-value="{{item.id}}" ng-click="menuSelected(item)" href="#">{{item.name}}</a></li>
           </ul>
         </div>
       </div>
-      <div class="container bg-white one-column no-margin no-padding">
-        <div class="row container-800">           
-          <div ng-include src="selectedTemplate" class="col-xs-12 h-100"></div>
+      <div class="container container-custom bg-white one-column no-margin no-padding">
+        <div class="row">      
+          <div ng-include src="selectedTemplate" class="container-900"></div>
         </div>
       </div>
     </div>

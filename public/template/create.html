@@ -1,5 +1,7 @@
 
-<div ng-controller="createCtrl" class="row container-900 bg-gray">
-  <div class="col-xs-3"><span>Upload imagem</span></div>
+<div ng-controller="createCtrl" class="row bg-gray h-600 no-margin padding-20 box-color">
+  <div class="col-xs-3">
+    <button type="file" ngf-select="upload($file, $invalidFiles)" accept="image/*" ng-model="picFile" ngf-max-height="1000" ngf-max-size="1MB" style="width: 30px; height: 30px;"></button><img ng-if="picFile" ngf-src="picFile" class="thumb"/>
+  </div>
   <div class="col-xs-9"><span>Dados imagem</span></div>
 </div>

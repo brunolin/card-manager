@@ -1,4 +1,4 @@
-angular.module('brnApp', []).controller('brnCtrl', ['$scope', function($scope){
+angular.module('brnApp', ['ngFileUpload']).controller('brnCtrl', ['$scope', function($scope){
 
   $scope.selected = {};
   $scope.menu = [{name: 'Cadastrar', id: 'create'},{name: 'Consultar', id: 'search'}];
