@@ -1,4 +1,6 @@
-@import "custom";
+@import "sizing";
+@import "color";
+  @import "alignment";
 
 .white {
   color: blue;
@@ -6,16 +8,4 @@
 
 .border-box {
   border: solid 1px;
-}
-
-@for $i from 1 through 10 {
-  .w-#{$i*50} {
-    width: 50px * $i
-  }
-}
-
-@for $i from 1 through 10 {
-  .h-#{$i*50} {
-    height: 50px * $i
-  }
 }

@@ -1,0 +1,21 @@
+@for $i from 1 through 10 {
+  .w-#{$i*50} {
+    width: 50px * $i
+  }
+}
+
+@for $i from 1 through 10 {
+  .h-#{$i*50} {
+    height: 50px * $i
+  }
+}
+
+.container-800 {
+  max-width: 800px;
+  min-width: 800px;
+  margin-left: 10% !important;
+}
+
+.one-column {
+  width: 100% !important;
+}

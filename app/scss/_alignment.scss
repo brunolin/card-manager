@@ -1,0 +1,31 @@
+.no-margin {
+  margin: 0 !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+@for $i from 1 through 4 {
+  .margin-left-#{$i*5} {
+    margin-left: 5px * $i
+  }
+}
+
+@for $i from 1 through 4 {
+  .margin-top-#{$i*5} {
+    margin-top: 5px * $i
+  }
+}
+
+@for $i from 1 through 4 {
+  .padding-left-#{$i*5} {
+    padding-left: 5px * $i
+  }
+}
+
+@for $i from 1 through 4 {
+  .padding-top-#{$i*5} {
+    padding-top: 5px * $i
+  }
+}

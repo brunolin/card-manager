@@ -15,16 +15,19 @@
     <link rel="stylesheet" href="js/angular/ui-bootstrap-csp.css">
   </head>
   <body>
-    <div ng-controller="brnCtrl" class="container">
-      <div class="row">
-        <div class="col-xs-12 h-100">     
+    <div ng-controller="brnCtrl" class="container bg-gray one-column no-margin no-padding">
+      <div class="row no-margin"><img src="./img/header.png" class="img-responsive"></div>
+      <div class="row no-margin">
+        <div class="col-xs-12 h-100 no-padding">     
           <ul class="nav nav-tabs nav-justified">
             <li role="presentation" ng-repeat="item in menu" ng-class="{ active : selected.menu == item.id }"><a ng-value="{{item.id}}" ng-click="menuSelected(item)" href="#">{{item.name}}</a></li>
           </ul>
         </div>
       </div>
-      <div class="row">
-        <div ng-include src="selectedTemplate" class="col-xs-12 h-100"></div>
+      <div class="container bg-white one-column no-margin no-padding">
+        <div class="row container-800">           
+          <div ng-include src="selectedTemplate" class="col-xs-12 h-100"></div>
+        </div>
       </div>
     </div>
     <script src="js/controllers/brnController.js"></script>
