@@ -1,26 +1,24 @@
 angular.module('brnApp').controller('createCtrl', ['$scope', 'Upload', '$timeout',
  function ($scope, Upload, $timeout){
 
-  $scope.uploadFiles = function(file, errFiles) {
-    $scope.f = file;
-    $scope.errFile = errFiles && errFiles[0];
-    if (file) {
-        file.upload = Upload.upload({
-            url: 'https://angular-file-upload-cors-srv.appspot.com/upload',
-            data: {file: file}
-        });
+   $scope.card = {};
+   $scope.uploadCard = function(file, card) {
+     console.log(file);
+     console.log(card);
+     if (file) {
+       file.upload = Upload.upload({
+         url: '../img/savedFiles/',
+         data: {file: file, card: card}
+       });
 
-        file.upload.then(function (response) {
-            $timeout(function () {
-                file.result = response.data;
-            });
-        }, function (response) {
-            if (response.status > 0)
-                $scope.errorMsg = response.status + ': ' + response.data;
-        }, function (evt) {
-            file.progress = Math.min(100, parseInt(100.0 *
-                                     evt.loaded / evt.total));
-        });
-    }
-  }
+       file.upload.then(function (resp) {
+         file.result = resp.data;
+       });
+      }
+   };
+
+   $scope.clear = function clear(){
+     $scope.card = null;
+     $scope.picFile = null;
+   }
 }]);

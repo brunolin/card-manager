@@ -1,7 +1,35 @@
 
-<div ng-controller="createCtrl" class="row bg-gray h-600 no-margin padding-20 box-color">
-  <div class="col-xs-3">
-    <button type="file" ngf-select="upload($file, $invalidFiles)" accept="image/*" ng-model="picFile" ngf-max-height="1000" ngf-max-size="1MB" style="width: 30px; height: 30px;"></button><img ng-if="picFile" ngf-src="picFile" class="thumb"/>
+<div ng-controller="createCtrl" style="padding-left:70px;" class="row bg-gray h-600 no-margin padding-20 box-color">
+  <div class="col-xs-3 border-box h-300 no-padding">
+    <div class="row no-margin h-250"><img ng-if="picFile" ngf-src="picFile" class="thumb"/></div>
+    <div class="row no-margin">
+      <button type="file" ngf-select="upload($file, $invalidFiles)" accept="image/*" ng-model="picFile" ngf-max-height="1000" ngf-max-size="1MB" class="h-50 one-column"><span>Select file</span></button>
+    </div>
   </div>
-  <div class="col-xs-9"><span>Dados imagem</span></div>
+  <div style="padding: 100px;" class="col-xs-9 h-300">
+    <form>
+      <div class="form-group row">
+        <label class="col-xs-2 form-control-label"><span>Name:</span></label>
+        <div class="col-xs-10">
+          <input type="text" ng-model="card.name" class="one-column"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-xs-2 form-control-label"><span>Price:</span></label>
+        <div class="col-xs-10">
+          <input type="text" ng-model="card.price" class="one-column"/>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-xs-2 form-control-label"><span>Date:</span></label>
+        <div class="col-xs-10">
+          <input type="text" ng-model="card.date" class="one-column"/>
+        </div>
+      </div>
+      <div class="button-container">
+        <button type="button" ng-click="clear()" class="btn btn-danger w-100"><span>Clear</span></button>
+        <button type="button" ng-click="uploadCard(picFile, card)" class="btn btn-success w-100 float-right"><span>Confirm</span></button>
+      </div>
+    </form>
+  </div>
 </div>

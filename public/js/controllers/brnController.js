@@ -1,7 +1,7 @@
 angular.module('brnApp', ['ngFileUpload']).controller('brnCtrl', ['$scope', function($scope){
 
   $scope.selected = {};
-  $scope.menu = [{name: 'Cadastrar', id: 'create'},{name: 'Consultar', id: 'search'}];
+  $scope.menu = [{name: 'Add card', id: 'create'},{name: 'Search card', id: 'search'}];
 
   $scope.menuSelected = function menuSelected(item){
       $scope.selected.menu = item.id
