@@ -4,11 +4,15 @@ module.exports = function(grunt) {
     watch: {
       jade: {
         files: 'app/jade/**/*.jade',
-        tasks: ['jade']
+        tasks: ['jade', 'nodemon']
       },
       sass: {
         files: 'app/scss/*.scss',
-        tasks: ['sass']
+        tasks: ['sass', 'nodemon']
+      },
+      js: {
+        files: 'public/js/**/*.js',
+        tasks: ['nodemon']
       }
     },
     browserSync: {
@@ -51,6 +55,11 @@ module.exports = function(grunt) {
           'public/css/main.css': 'app/scss/testing.scss'
         }
       }
+    },
+    nodemon: {
+      dev: {
+        script: 'server.js'
+      }
     }
   });
 
@@ -58,7 +67,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jade');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-nodemon');
 
-  grunt.registerTask('default', ['browserSync', 'watch']);
+  grunt.registerTask('default', ['browserSync', 'watch', 'nodemon']);
 
 };
