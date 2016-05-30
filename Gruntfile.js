@@ -10,6 +10,14 @@ module.exports = function(grunt) {
         files: 'app/scss/*.scss',
         tasks: ['sass', 'nodemon']
       },
+      html: {
+        files: 'public/template/*.html',
+        tasks: ['nodemon']
+      },
+      css: {
+        files: 'public/css/*.css',
+        tasks: ['nodemon']
+      },
       js: {
         files: 'public/js/**/*.js',
         tasks: ['nodemon']
@@ -69,6 +77,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-nodemon');
 
-  grunt.registerTask('default', ['browserSync', 'watch', 'nodemon']);
+  grunt.registerTask('default', ['browserSync', 'watch']);
 
 };
