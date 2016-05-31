@@ -22,10 +22,4 @@ angular.module('brnApp').controller('createCtrl', ['$scope', 'Upload', '$http',
      $scope.card = null;
      $scope.picFile = null;
    };
-
-   $scope.consulta = function consulta() {
-     $http.get('/r/search').then(function (resp){
-       console.log(resp.data);
-     });
-   };
 }]);

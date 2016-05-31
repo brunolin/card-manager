@@ -28,8 +28,8 @@ module.exports = function(){
 
 	controller.search = function(req, res){
 		var consulta = Mongoose.model('Card');
-
-		consulta.find(function(err, resp) {
+		
+		consulta.find(req.body, function(err, resp) {
 		  if (err) res.send('Erro na busca' + err);
 		  res.send(resp);
 		});

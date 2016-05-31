@@ -4,23 +4,11 @@ module.exports = function(grunt) {
     watch: {
       jade: {
         files: 'app/jade/**/*.jade',
-        tasks: ['jade', 'nodemon']
+        tasks: ['jade']
       },
       sass: {
         files: 'app/scss/*.scss',
-        tasks: ['sass', 'nodemon']
-      },
-      html: {
-        files: 'public/template/*.html',
-        tasks: ['nodemon']
-      },
-      css: {
-        files: 'public/css/*.css',
-        tasks: ['nodemon']
-      },
-      js: {
-        files: 'public/js/**/*.js',
-        tasks: ['nodemon']
+        tasks: ['sass']
       }
     },
     browserSync: {

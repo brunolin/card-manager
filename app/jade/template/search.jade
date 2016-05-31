@@ -1,5 +1,31 @@
 div.row.bg-gray.h-600.no-margin.padding-20.box-color(ng-controller="searchCtrl")
-  div.col-xs-3
-    
-  div.col-xs-9
-    span Dados imagem
+  div.col-xs-6
+    form
+      div.form-group.row
+        label.col-xs-2.form-control-label
+          span Name:
+        div.col-xs-10
+          input.one-column(type="text" ng-model="card.name")
+      div.form-group.row
+        label.col-xs-2.form-control-label
+          span Price:
+        div.col-xs-10
+          input.one-column(type="text" ng-model="card.price")        
+      div.form-group.row
+        label.col-xs-2.form-control-label
+          span Date:
+        div.col-xs-10
+          input.one-column(type="text" ng-model="card.date")    
+      div.button-container
+        button.btn.btn-danger.w-100(type="button" ng-click="clear()")
+          span Clear
+        button.btn.btn-success.w-100.float-right(type="button" ng-click="search()" ng-disabled="isInvalid()")
+          span Search
+  div.col-xs-6
+    div.w-350.h-140.padding-20.border-box(ng-repeat="card in cards")
+      div.w-70.h-100.border-box.inline-block
+        img.thumb(ngf-src="card.urlImage")
+      div.h-100.border-box.inline-block.padding-20(style="width: calc(100% - 75px); vertical-align: top;")
+        div Name: {{card.name}}
+        div Price: {{card.price}}
+        div Date: {{card.date}}
