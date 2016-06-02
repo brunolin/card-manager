@@ -19,6 +19,8 @@ div.row.bg-gray.h-600.no-margin.padding-20.box-color(ng-controller="searchCtrl")
       div.button-container
         button.btn.btn-danger.w-100(type="button" ng-click="clear()")
           span Clear
+        button.btn.btn-caution.w-80.float-right(type="button" ng-click="logIn()")
+          span Clear All
         button.btn.btn-success.w-100.float-right(type="button" ng-click="search()" ng-disabled="isInvalid()")
           span Search
   div.col-xs-6

@@ -1,6 +1,7 @@
 var Mongoose = require('mongoose');
 
 var db = Mongoose.connection;
+var password = 'brunodoyoutube';
 
 module.exports = function(){
 
@@ -28,12 +29,22 @@ module.exports = function(){
 
 	controller.search = function(req, res){
 		var consulta = Mongoose.model('Card');
-		
+
 		consulta.find(req.body, function(err, resp) {
 		  if (err) res.send('Erro na busca' + err);
 		  res.send(resp);
 		});
+	};
 
+	controller.clearAll = function(req, res){
+		if (req.body.password === password){
+			Mongoose.model('Card').remove({}, function(err, resp) {
+				console.log(resp);
+				res.send(true);
+			});
+		} else {
+			res.send(false);
+		}
 
 	}
 	return controller;
