@@ -1,13 +1,16 @@
 
-<div class="container">
+<div class="container one-column no-margin padding-20">
   <div class="row">
-    <div class="col-xs-12"><span>password to delete all database</span>
-      <input ng-model="password"/>
+    <div class="col-xs-12 padding-20">
+      <fieldser class="form-group">
+        <label for="pass">Enter password for clear all database</label>
+        <input ng-model="password" type="password" id="pass" placeholder="Enter password" class="form-control"/><small class="text-muted">This action can't be reversed.</small>
+      </fieldser><strong ng-show="success.msg" ng-bind="success.msg" ng-class="{ 'text-success': success.status, 'text-danger': !success.status }" class="block"></strong>
     </div>
   </div>
   <div class="row">
     <div class="col-xs-12">
-      <button ng-click="auth()"></button>
+      <button ng-click="auth()" class="btn btn-primary"><span>Delete All</span></button>
     </div>
   </div>
 </div>

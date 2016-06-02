@@ -1,7 +1,7 @@
 var Mongoose = require('mongoose');
 
 var db = Mongoose.connection;
-var password = 'brunodoyoutube';
+var password = 'brunolin';
 
 module.exports = function(){
 
@@ -9,21 +9,17 @@ module.exports = function(){
 
 	controller.upload = function(req, res){
 		var Card = Mongoose.model('Card');
-
-		//console.log(req.body);
-		res.send(req.body);
-
 		var up = new Card(
 			{
-				name: req.body.card.name,
-				price: req.body.card.price,
-				date: req.body.card.date,
-				urlImage: req.body.file.$ngfBlobUrl
+				name: req.body.name,
+				price: req.body.price,
+				date: req.body.date,
+				urlImage: req.files.file.path.slice(7)
 			}
 		);
-
-		up.save(function(err, thor) {
-		  if (err) return console.error('DEU RUIM');
+		up.save(function(err, resp) {
+		  if (err) res.status(500).send({err: err});
+			res.status(200).send();
 		});
 	};
 
@@ -40,10 +36,10 @@ module.exports = function(){
 		if (req.body.password === password){
 			Mongoose.model('Card').remove({}, function(err, resp) {
 				console.log(resp);
-				res.send(true);
+				res.send({status: true, msg: 'All data cleared'});
 			});
 		} else {
-			res.send(false);
+			res.send({status: false, msg: 'Wrong password'});
 		}
 
 	}

@@ -32,3 +32,8 @@ body {
 .one-column {
   width: 100% !important;
 }
+
+.card-list {
+  height: 100%;
+  overflow-y: scroll;
+}

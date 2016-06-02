@@ -5,18 +5,15 @@ angular.module('brnApp').controller('createCtrl', ['$scope', 'Upload', '$http',
    $scope.uploadCard = function(file, card) {
     //  console.log(file);
     //  console.log(card);
-     $http.post('/r/upload', {file: file, card: card}).then(function(resp){console.log(resp);});
-    //  if (file) {
-    //    file.upload = Upload.upload({
-    //      url: '../img/savedFiles/',
-    //      data: {file: file, card: card}
-    //    });
-     //
-    //    file.upload.then(function (resp) {
-    //      file.result = resp.data;
-    //    });
-    //   }
-   };
+    //$http.post('/r/upload', {file: file, card: card}).then(function(resp){console.log(resp);});
+    if (file) {
+      file.upload = Upload.upload({
+        url: '/r/upload',
+        data: card,
+        file: file
+      });
+     }
+    };
 
    $scope.clear = function clear(){
      $scope.card = null;

@@ -12,8 +12,7 @@ module.exports = function(){
 	app.use(bodyParser.urlencoded({
 	  extended: true
 	}));
-	//home(app);
+
 	contatos(app);
 	return app;
 }
-

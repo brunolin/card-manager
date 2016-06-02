@@ -23,7 +23,7 @@ div.row.bg-gray.h-600.no-margin.padding-20.box-color(ng-controller="searchCtrl")
           span Clear All
         button.btn.btn-success.w-100.float-right(type="button" ng-click="search()" ng-disabled="isInvalid()")
           span Search
-  div.col-xs-6
+  div.col-xs-6.card-list
     div.w-350.h-140.padding-20.border-box(ng-repeat="card in cards")
       div.w-70.h-100.border-box.inline-block
         img.thumb(ngf-src="card.urlImage")
