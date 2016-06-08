@@ -11,6 +11,11 @@
   padding: 20px;
 }
 
+.padding-10 {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
 @for $i from 1 through 4 {
   .margin-left-#{$i*5} {
     margin-left: 5px * $i

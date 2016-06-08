@@ -24,10 +24,16 @@ div.row.bg-gray.h-600.no-margin.padding-20.box-color(ng-controller="searchCtrl")
         button.btn.btn-success.w-100.float-right(type="button" ng-click="search()" ng-disabled="isInvalid()")
           span Search
   div.col-xs-6.card-list
-    div.w-350.h-140.padding-20.border-box(ng-repeat="card in cards")
-      div.w-70.h-100.border-box.inline-block
-        img.thumb(ngf-src="card.urlImage")
-      div.h-100.border-box.inline-block.padding-20(style="width: calc(100% - 75px); vertical-align: top;")
-        div Name: {{card.name}}
-        div Price: {{card.price}}
-        div Date: {{card.date}}
+    div.w-350.h-140.padding-10.border-box.border-radius-10(ng-repeat="card in cards")
+      div.w-70.h-100.border-box.inline-block.border-radius-inherit
+        img.thumb.border-radius-inherit(ngf-src="card.urlImage")
+      div.h-100.border-box.inline-block.padding-10.border-radius-inherit(style="width: calc(100% - 75px); vertical-align: top;")
+        div.line-height-25
+          span Name: 
+            span {{card.name}}
+        div.line-height-25 
+          span Price: 
+            span {{card.price}}
+        div.line-height-25 
+          span Date: 
+            span {{card.date}}

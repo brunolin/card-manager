@@ -28,12 +28,12 @@
     </form>
   </div>
   <div class="col-xs-6 card-list">
-    <div ng-repeat="card in cards" class="w-350 h-140 padding-20 border-box">
-      <div class="w-70 h-100 border-box inline-block"><img ngf-src="card.urlImage" class="thumb"/></div>
-      <div style="width: calc(100% - 75px); vertical-align: top;" class="h-100 border-box inline-block padding-20">
-        <div>Name: {{card.name}}</div>
-        <div>Price: {{card.price}}</div>
-        <div>Date: {{card.date}}</div>
+    <div ng-repeat="card in cards" class="w-350 h-140 padding-10 border-box border-radius-10">
+      <div class="w-70 h-100 border-box inline-block border-radius-inherit"><img ngf-src="card.urlImage" class="thumb border-radius-inherit"/></div>
+      <div style="width: calc(100% - 75px); vertical-align: top;" class="h-100 border-box inline-block padding-10 border-radius-inherit">
+        <div class="line-height-25"><span>Name: <span>{{card.name}}</span></span></div>
+        <div class="line-height-25"> <span>Price: <span>{{card.price}}</span></span></div>
+        <div class="line-height-25"> <span>Date: <span>{{card.date}}</span></span></div>
       </div>
     </div>
   </div>

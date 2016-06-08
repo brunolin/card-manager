@@ -13,7 +13,7 @@ div.row.bg-gray.h-600.no-margin.padding-20.box-color(ng-controller="createCtrl" 
         label.col-xs-2.form-control-label
           span Name:
         div.col-xs-10
-          input.one-column(type="text" ng-model="card.name")
+          input.one-column(type="text" ng-model="card.name" maxlength="40")
       div.form-group.row
         label.col-xs-2.form-control-label
           span Price:
