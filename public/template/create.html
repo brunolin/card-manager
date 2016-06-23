@@ -7,28 +7,29 @@
     </div>
   </div>
   <div style="padding: 100px;" class="col-xs-9 h-300">
-    <form>
+    <form name="createForm">
       <div class="form-group row">
         <label class="col-xs-2 form-control-label"><span>Name:</span></label>
         <div class="col-xs-10">
-          <input type="text" ng-model="card.name" maxlength="40" class="one-column"/>
+          <input type="text" ng-model="card.name" ng-required="true" maxlength="40" class="one-column"/>
         </div>
       </div>
       <div class="form-group row">
         <label class="col-xs-2 form-control-label"><span>Price:</span></label>
         <div class="col-xs-10">
-          <input type="text" ng-model="card.price" class="one-column"/>
+          <input type="text" ng-model="card.price" ng-required="true" class="one-column"/>
         </div>
       </div>
       <div class="form-group row">
         <label class="col-xs-2 form-control-label"><span>Date:</span></label>
         <div class="col-xs-10">
-          <input type="text" ng-model="card.date" class="one-column"/>
+          <input type="text" ng-model="card.date" ng-required="true" class="one-column"/>
         </div>
       </div>
       <div class="button-container">
         <button type="button" ng-click="clear()" class="btn btn-danger w-100"><span>Clear</span></button>
-        <button type="button" ng-click="uploadCard(picFile, card)" class="btn btn-success w-100 float-right"><span>Confirm</span></button>
+        <button type="button" ng-disabled="!createForm.$valid || !picFile" ng-click="uploadCard(picFile, card)" ng-if="!loading" class="btn btn-success w-100 float-right"><span>Confirm</span></button>
+        <button ng-if="loading" class="btn btn-success w-100 float-right"><span class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span><span class="margin-left-5">Loading</span></button>
       </div>
     </form>
   </div>

@@ -8,24 +8,27 @@ div.row.bg-gray.h-600.no-margin.padding-20.box-color(ng-controller="createCtrl" 
         span Select file
     
   div.col-xs-9.h-300(style="padding: 100px;")
-    form
+    form(name="createForm")
       div.form-group.row
         label.col-xs-2.form-control-label
           span Name:
         div.col-xs-10
-          input.one-column(type="text" ng-model="card.name" maxlength="40")
+          input.one-column(type="text" ng-model="card.name" ng-required="true" maxlength="40")
       div.form-group.row
         label.col-xs-2.form-control-label
           span Price:
         div.col-xs-10
-          input.one-column(type="text" ng-model="card.price")        
+          input.one-column(type="text" ng-model="card.price" ng-required="true")        
       div.form-group.row
         label.col-xs-2.form-control-label
           span Date:
         div.col-xs-10
-          input.one-column(type="text" ng-model="card.date")    
+          input.one-column(type="text" ng-model="card.date" ng-required="true")    
       div.button-container
         button.btn.btn-danger.w-100(type="button" ng-click="clear()")
           span Clear
-        button.btn.btn-success.w-100.float-right(type="button" ng-click="uploadCard(picFile, card)")
+        button.btn.btn-success.w-100.float-right(type="button" ng-disabled="!createForm.$valid || !picFile" ng-click="uploadCard(picFile, card)" ng-if="!loading")
           span Confirm
+        button.btn.btn-success.w-100.float-right(ng-if="loading")
+            span.glyphicon.glyphicon-refresh.glyphicon-refresh-animate
+            span.margin-left-5 Loading

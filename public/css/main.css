@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+@import url("../fonts/glyphicons-halflings-regular.eot");
+@import url("../fonts/glyphicons-halflings-regular.svg");
+@import url("../fonts/glyphicons-halflings-regular.ttf");
+@import url("../fonts/glyphicons-halflings-regular.woff");
+@import url("../fonts/glyphicons-halflings-regular.woff2");
 .w-10 {
   width: 10px;
 }
@@ -299,6 +304,27 @@ body {
   border-radius: inherit;
 }
 
+.glyphicon-refresh-animate {
+  -animation: spin .7s infinite linear;
+  -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: scale(1) rotate(0deg);
+  }
+  to {
+    transform: scale(1) rotate(360deg);
+  }
+}
 .no-margin {
   margin: 0 !important;
 }

@@ -4,7 +4,7 @@
     <div class="col-xs-12 padding-20">
       <fieldser class="form-group">
         <label for="pass">Enter password for clear all database</label>
-        <input ng-model="password" type="password" id="pass" placeholder="Enter password" class="form-control"/><small class="text-muted">This action can't be reversed.</small>
+        <input ng-model="password" type="password" name="pass" placeholder="Enter password" class="form-control"/><small class="text-muted">This action can't be reversed.</small>
       </fieldser><strong ng-show="success.msg" ng-bind="success.msg" ng-class="{ 'text-success': success.status, 'text-danger': !success.status }" class="block"></strong>
     </div>
   </div>

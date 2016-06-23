@@ -1,16 +1,22 @@
-angular.module('brnApp').controller('createCtrl', ['$scope', 'Upload', '$http',
- function ($scope, Upload, $http){
+angular.module('brnApp').controller('createCtrl', ['$scope', 'Upload', '$http', 'alertify',
+ function ($scope, Upload, $http, alertify){
 
    $scope.card = {};
+   $scope.loading = false;
+
    $scope.uploadCard = function(file, card) {
-    //  console.log(file);
-    //  console.log(card);
-    //$http.post('/r/upload', {file: file, card: card}).then(function(resp){console.log(resp);});
+
     if (file) {
+      $scope.loading = true;
       file.upload = Upload.upload({
         url: '/r/upload',
         data: card,
         file: file
+      }).then(function(resp){
+        $scope.loading = false;
+        alertify.success('Sucesso');
+      }, function(err){
+        alertify.error('Deu ruim');
       });
      }
     };

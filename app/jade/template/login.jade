@@ -3,7 +3,7 @@ div.container.one-column.no-margin.padding-20
     div.col-xs-12.padding-20
       fieldser.form-group
         label(for="pass") Enter password for clear all database
-        input.form-control(ng-model="password" type="password" id="pass" placeholder="Enter password")
+        input.form-control(ng-model="password" type="password" name="pass" placeholder="Enter password")
         small.text-muted This action can't be reversed.
       strong.block(ng-show="success.msg" ng-bind="success.msg" ng-class="{ 'text-success': success.status, 'text-danger': !success.status }")
   div.row
