@@ -277,11 +277,10 @@ body {
 
 .card-list {
   height: 100%;
-  overflow-y: scroll;
 }
 
 .bg-gray {
-  background-color: rgba(0, 0, 0, 0.1);
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
 
 .bg-white {

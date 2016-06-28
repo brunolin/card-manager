@@ -1,4 +1,4 @@
-var Mongoose = require('mongoose');
+ var Mongoose = require('mongoose');
 
 var db = Mongoose.connection;
 var password = 'brunolin';
@@ -35,6 +35,7 @@ module.exports = function(){
 	controller.clearAll = function(req, res){
 		if (req.body.password === password){
 			Mongoose.model('Card').remove({}, function(err, resp) {
+				console.log('Banco apagado!');
 				console.log(resp);
 				res.send({status: true, msg: 'All data cleared'});
 			});
