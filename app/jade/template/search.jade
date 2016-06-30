@@ -39,5 +39,5 @@ div.row.bg-gray.h-600.no-margin.padding-20.box-color(ng-controller="searchCtrl")
             span {{card.date}}
     div(ng-if="pagination" style="position:absolute;bottom:0;")
       ul.pagination
-        li(ng-repeat="page in pages" ng-click="changePage(page.id)")
+        li(ng-repeat="page in pages" ng-click="changePage(page.id)" ng-class="{ active : control.active === page.id }")
           a {{page.id + 1}}

@@ -5,6 +5,7 @@ angular.module('brnApp').controller('searchCtrl', ['$scope', '$http', '$uibModal
   $scope.pages = [];
   $scope.pagination = false;
   $scope.password = null;
+  $scope.control = {};
 
   $scope.search = function search() {
     if($scope.card.name == ""){$scope.card.name=undefined;}
@@ -25,7 +26,6 @@ angular.module('brnApp').controller('searchCtrl', ['$scope', '$http', '$uibModal
           array2.push({id: i});
         }
         $scope.pages = array2;
-        console.log($scope.pages);
       }
 
       function pages(num){
@@ -39,7 +39,7 @@ angular.module('brnApp').controller('searchCtrl', ['$scope', '$http', '$uibModal
   };
 
   $scope.changePage = function changePage(page) {
-    console.log(page);
+    $scope.control.active = page;
     $scope.cards = [];
     for(i = page * 4; i < $scope.cardsResp.length; i++){
       $scope.cards.push($scope.cardsResp[i]);
